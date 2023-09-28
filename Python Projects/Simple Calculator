@@ -1,0 +1,16 @@
+x=int(input("Enter first value:"))
+y=int(input("Enter second value:"))
+Sum=x+y
+Sub=x-y
+Mul=x*y
+Div=x/y
+Floordiv=x//y
+Expo=x**y
+Mod=x%y
+print("Addition of first and second values is",Sum)
+print("Subtraction of first and second values is",Sub)
+print("Multiplication of first and second values is",Mul)
+print("Division of first and second values is",Div)
+print("Floor Division of first and second values is",Floordiv)
+print("Exponent of first and second values is",Expo)
+print("Modulus of first and second values is",Mod)

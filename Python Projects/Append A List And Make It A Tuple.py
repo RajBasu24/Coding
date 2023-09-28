@@ -1,0 +1,10 @@
+def update_Tuple():
+    dataTuple=(1,2,3,"Key","One")
+    templist=list(dataTuple)
+    print(templist)
+    print(type(templist))
+    templist.append(4)
+    print(templist)
+    print(type(templist))
+    print(dataTuple)
+    print(type(dataTuple))
