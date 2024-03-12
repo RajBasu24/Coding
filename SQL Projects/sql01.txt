@@ -1,0 +1,57 @@
+SQL> create table STUDENT(
+  2  ROLL varchar2(4),
+  3  NAME varchar2(15),
+  4  STREAM varchar2(3),
+  5  YEAR number(1),
+  6  MARKS number(3));
+
+Table created.
+
+SQL> insert into STUDENT values(0064,'Raj Basu','CSE',3,79);
+
+1 row created.
+
+SQL> insert into STUDENT values('&ROLL','&NAME','&STREAM','&YEAR','&MARKS');
+Enter value for roll: 0001
+Enter value for name: Abir Roy
+Enter value for stream: CSE
+Enter value for year: 3
+Enter value for marks: 62
+old   1: insert into STUDENT values('&ROLL','&NAME','&STREAM','&YEAR','&MARKS')
+new   1: insert into STUDENT values('0001','Abir Roy','CSE','3','62')
+
+1 row created.
+
+SQL> insert into STUDENT values('&ROLL','&NAME','&STREAM','&YEAR','&MARKS');
+Enter value for roll: 0002
+Enter value for name: Gourav Dutta
+Enter value for stream: CSE
+Enter value for year: 3
+Enter value for marks: 
+old   1: insert into STUDENT values('&ROLL','&NAME','&STREAM','&YEAR','&MARKS')
+new   1: insert into STUDENT values('0002','Gourav Dutta','CSE','3','')
+
+1 row created.
+
+SQL> desc STUDENT;
+ Name                                      Null?    Type
+ ----------------------------------------- -------- ----------------------------
+ ROLL                                               VARCHAR2(4)
+ NAME                                               VARCHAR2(15)
+ STREAM                                             VARCHAR2(3)
+ YEAR                                               NUMBER(1)
+ MARKS                                              NUMBER(3)
+
+SQL> select * from STUDENT;
+
+ROLL NAME            STR       YEAR      MARKS                                  
+---- --------------- --- ---------- ----------                                  
+64   Raj Basu        CSE          3         79                                  
+0001 Abir Roy        CSE          3         62                                  
+0002 Gourav Dutta    CSE          3                                             
+
+SQL> commit;
+
+Commit complete.
+
+SQL> spool off;
