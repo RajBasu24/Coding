@@ -1,0 +1,55 @@
+SQL> insert into STUDENT(ROLL,NAME,STREAM,YEAR)values(0003,'Prabir Ghosh','CSE',3);
+
+1 row created.
+
+SQL> alter table STUDENT
+  2  add ADDRESS varchar2(50);
+
+Table altered.
+
+SQL> alter table STUDENT
+  2  drop column ADDRESS;
+
+Table altered.
+
+SQL> alter table STUDENT
+  2  modify YEAR number(2);
+
+Table altered.
+
+SQL> alter table STUDENT
+  2  rename column ROLL to ROLLNO;
+
+Table altered.
+
+SQL> update STUDENT
+  2  set YEAR=3;
+
+4 rows updated.
+
+SQL> update STUDENT
+  2  set YEAR=3
+  3  where ROLLNO=0001;
+
+1 row updated.
+
+SQL> update STUDENT
+  2  set NAME='Gourav Mitra',Marks=75
+  3  where NAME='Gourav Dutta';
+
+1 row updated.
+
+SQL> update STUDENT
+  2  set NAME='Sourav Das',MARKS=73;
+
+4 rows updated.
+
+SQL> rename STUDENT to STUDENT064_FIT;
+
+Table renamed.
+
+SQL> commit;
+
+Commit complete.
+
+SQL> spool off;
