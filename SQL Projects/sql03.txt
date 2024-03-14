@@ -1,0 +1,151 @@
+SQL> create table STUDENT_ALL
+  2  as
+  3  select * from STUDENT_064FIT;
+
+Table created.
+
+SQL> create table STUDENT_ROLLNO_NAME
+  2  as
+  3  select ROLLNO,NAME from STUDENT_064FIT;
+
+Table created.
+
+SQL> create table STUDENT_SCHEMA
+  2  as
+  3  select * from STUDENT_064FIT
+  4  where 1=2;
+
+Table created.
+
+SQL> create table STUDENT_SCHEMA1
+  2  as
+  3  select ROLLNO,NAME from STUDENT_064FIT;
+
+Table created.
+
+SQL> create table STUDENT_NEW(SID,SNAME,COURSE,MARKS,ADDRESS)
+  2  as
+  3  select * from STUDENT_064FIT;
+
+Table created.
+
+SQL> delete from STUDENT_ALL
+  2  where YEAR=3;
+
+4 rows deleted.
+
+SQL> delete from STUDENT_ROLLNO_NAME
+  2  ;
+
+4 rows deleted.
+
+SQL> select * from STUDENT_064FIT;
+
+ROLL NAME            STR       YEAR      MARKS                                  
+---- --------------- --- ---------- ----------                                  
+64   Sourav Das      CSE          3         73                                  
+0001 Sourav Das      CSE          3         73                                  
+0002 Sourav Das      CSE          3         73                                  
+3    Sourav Das      CSE          3         73                                  
+
+SQL> select distinct * from STUDENT_064FIT;
+
+ROLL NAME            STR       YEAR      MARKS                                  
+---- --------------- --- ---------- ----------                                  
+64   Sourav Das      CSE          3         73                                  
+0001 Sourav Das      CSE          3         73                                  
+0002 Sourav Das      CSE          3         73                                  
+3    Sourav Das      CSE          3         73                                  
+
+SQL> select distinct STREAM from STUDENT_064FIT;
+
+STR                                                                             
+---                                                                             
+CSE                                                                             
+
+SQL> select distinct STREAM,YEAR from STUDENT_064FIT;
+
+STR       YEAR                                                                  
+--- ----------                                                                  
+CSE          3                                                                  
+
+SQL> select *
+  2  from STUDENT_064FIT;
+
+ROLL NAME            STR       YEAR      MARKS                                  
+---- --------------- --- ---------- ----------                                  
+64   Sourav Das      CSE          3         73                                  
+0001 Sourav Das      CSE          3         73                                  
+0002 Sourav Das      CSE          3         73                                  
+3    Sourav Das      CSE          3         73                                  
+
+SQL> select *
+  2  from STUDENT_064FIT
+  3  where YEAR=3;
+
+ROLL NAME            STR       YEAR      MARKS                                  
+---- --------------- --- ---------- ----------                                  
+64   Sourav Das      CSE          3         73                                  
+0001 Sourav Das      CSE          3         73                                  
+0002 Sourav Das      CSE          3         73                                  
+3    Sourav Das      CSE          3         73                                  
+
+SQL> select * from STUDENT_064FIT
+  2  order by ROLLNO;
+
+ROLL NAME            STR       YEAR      MARKS                                  
+---- --------------- --- ---------- ----------                                  
+0001 Sourav Das      CSE          3         73                                  
+0002 Sourav Das      CSE          3         73                                  
+3    Sourav Das      CSE          3         73                                  
+64   Sourav Das      CSE          3         73                                  
+
+SQL> select * from STUDENT_064FIT
+  2  order by ROLLNO asc;
+
+ROLL NAME            STR       YEAR      MARKS                                  
+---- --------------- --- ---------- ----------                                  
+0001 Sourav Das      CSE          3         73                                  
+0002 Sourav Das      CSE          3         73                                  
+3    Sourav Das      CSE          3         73                                  
+64   Sourav Das      CSE          3         73                                  
+
+SQL> select * from STUDENT_064FIT
+  2  order by ROLLNO desc;
+
+ROLL NAME            STR       YEAR      MARKS                                  
+---- --------------- --- ---------- ----------                                  
+64   Sourav Das      CSE          3         73                                  
+3    Sourav Das      CSE          3         73                                  
+0002 Sourav Das      CSE          3         73                                  
+0001 Sourav Das      CSE          3         73                                  
+
+SQL> truncate table STUDENT_ALL;
+
+Table truncated.
+
+SQL> drop table STUDENT_ALL;
+
+Table dropped.
+
+SQL> drop table STUDENT_ROLLNO_NAME;
+
+Table dropped.
+
+SQL> drop table STUDENT_SCHEMA;
+
+Table dropped.
+
+SQL> drop table STUDENT_SCHEMA1;
+
+Table dropped.
+
+SQL> drop table STUDENT_NEW;
+
+Table dropped.
+
+SQL> commit;
+
+Commit complete.
+
+SQL> spool off;
